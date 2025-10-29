@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
+    --skin-color: #6c63ff;
     --bg-black-900: #f2f2fc;
     --bg-black-100: #fdf9ff;
     --bg-black-50: #e8dfec;
@@ -247,6 +248,20 @@ ul {
     background: var(--skin-color);
     display: inline-block;
     position: relative;
+}
+
+.btn {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 35px;
+    color: white;
+    border-radius: 40px;
+    display: inline-block;
+    white-space: nowrap;
+    border: none;
+    background: var(--skin-color, #6c63ff); /* add fallback color */
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .aside .nav-toggler span::before {
@@ -657,6 +672,56 @@ h3.my-profession {
     color: var(--skin-color);
     text-decoration: none;
     font-weight: bold;
+}
+
+
+/* Only style regular links in portfolio details — don't override buttons */
+.portfolio-details a:not(.btn) {
+    color: var(--skin-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Ensure any anchor used as a button keeps visible white text */
+.portfolio-details a.btn {
+    color: white;
+    background: var(--skin-color);
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+/* ...existing code... */
+
+
+// ...existing code...
+.aside .logo {
+    position: absolute;
+    top: 30px; /* was 50px — moved up slightly so logo sits nicely */
+    font-size: 30px;
+    text-transform: capitalize;
+}
+/* ...existing code... */
+
+.aside .nav {
+    margin-top: 110px; /* increased from 50px to push nav down below the logo */
+    width: 100%;
+}
+/* ...existing code... */
+
+/* Responsive adjustments so spacing stays good on smaller screens */
+@media (max-width: 1199px) {
+    .aside .nav {
+        margin-top: 90px; /* slightly less space on narrower screens */
+    }
+    /* ...existing code... */
+}
+
+@media (max-width: 767px) {
+    .aside .nav {
+        margin-top: 100px; /* mobile spacing */
+    }
+    /* ...existing code... */
 }
 
 /* Contact me */
